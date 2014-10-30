@@ -1,0 +1,110 @@
+# mvncl - CLI for querying maven central
+David W Millar <david.w.millar@gmail.com>
+:toc:
+:icons: font
+:source-highlighter: prettify
+
+Command line utility to search maven central. I got sick of using a browser.
+
+.Supported Searches
+[options="compact"]
+- main search
+- search by a combination of group/artifact/version
+- search by fully qualified class name
+- search by id
+
+
+## Building
+
+This project uses gradle for builds, and includes wrapper scripts
+so that it is not necessary to explicitly install gradle to build and test the project.
+
+.Building with gradle
+[source,shell]
+----
+$ ./gradlew tasks   <1>
+$ ./gradlew distZip <2>
+$ ./gradlew distTar <3>
+$ ./gradlew test    <4>
+$ ./gradlew check   <5>
+----
+<1> Lists the available tasks for this project
+<2> Builds an application distribution as a zip file
+<3> Builds an application distribution as a tar file
+<4> Runs tests
+<5> Runs tests and checks (eg: code quality checks)
+
+The build creates an application distribution using the http://www.gradle.org/docs/current/userguide/application_plugin.html[gradle application plugin].
+See the http://www.gradle.org/docs/current/userguide/application_plugin.html[gradle application plugin documentation] for details.
+
+http://www.cukes.info[Cucumber] is used to test the cli.
+
+.Running CLI Tests
+[source, shell]
+----
+$ rake features <1>
+$ rake html     <2>
+----
+<1> Output test results to the console
+<1> Output test results to html
+
+
+## Usage
+
+.Usage Summary
+[source]
+----
+./mvncl help search
+NAME
+        mvncl search - Search Maven Central for Artifacts
+
+SYNOPSIS
+        mvncl [(-v | --verbose)] [(-f <format> | --format <format>)] search
+        mvncl [(-v | --verbose)] [(-f <format> | --format <format>)] search fqcn
+        mvncl [(-v | --verbose)] [(-f <format> | --format <format>)] search gavp
+                [-i <i>] [-a <a>] [-g <g>] [-p <p>] [-v <v>]
+        mvncl [(-v | --verbose)] [(-f <format> | --format <format>)] search id
+        mvncl [(-v | --verbose)] [(-f <format> | --format <format>)] search main
+                [-r <rows>]
+
+OPTIONS
+        -f <format>, --format <format>
+            Dependency Format
+            (maven|buildr|ivy|grape|gradle|grails|sbt|leiningen)
+
+        -v, --verbose
+            Verbose mode
+
+COMMANDS
+        With no arguments, maven central main search
+
+        main
+            maven central main search
+
+            With -r option, max number of results
+
+        gavp
+            search by a combination of group, artifact, version, and package
+
+            With -a option, artifact name
+            With -g option, group
+            With -p option, packaging
+            With -v option, version
+
+        id
+            search by id (group and name)
+
+        fqcn
+            search by fully qualified class name
+----
+
+[NOTE]
+For more information about any of the sub-commands, use './mvncl help search <command>'
+
+### License
+
+  This project is licensed under the terms of the
+  http://www.apache.org/licenses/LICENSE-2.0.html[Apache License, Version 2.0].
+
+&copy; 2014 David W Millar
+
