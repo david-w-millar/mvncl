@@ -4,6 +4,8 @@ David W Millar <david.w.millar@gmail.com>
 :icons: font
 :source-highlighter: prettify
 
+image:https://travis-ci.org/david-w-millar/mvncl.svg["Build Status", link="https://travis-ci.org/david-w-millar/mvncl"]
+
 Command line utility to search maven central. I got sick of using a browser.
 
 .Supported Searches
