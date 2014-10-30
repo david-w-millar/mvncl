@@ -1,4 +1,4 @@
-# mvncl - CLI for querying maven central
+# mvncl - cli for querying maven central
 David W Millar <david.w.millar@gmail.com>
 :toc:
 :icons: font
@@ -37,7 +37,7 @@ $ ./gradlew check   <5>
 The build creates an application distribution using the http://www.gradle.org/docs/current/userguide/application_plugin.html[gradle application plugin].
 See the http://www.gradle.org/docs/current/userguide/application_plugin.html[gradle application plugin documentation] for details.
 
-http://www.cukes.info[Cucumber] is used to test the cli.
+http://cukes.info[Cucumber] is used to test the cli.
 
 .Running CLI Tests
 [source, shell]
