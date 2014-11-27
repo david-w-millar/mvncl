@@ -110,3 +110,5 @@ For more information about any of the sub-commands, use './mvncl help search <co
 
 &copy; 2014 David W Millar
 
+// vim: set syntax=asciidoc:
+
