@@ -8,7 +8,7 @@ apply plugin: 'signing'
 apply plugin: 'maven'
 
 description   = 'cli for searching maven central'
-version       = '0.1.0'
+version       = '0.1.1'
 group         = 'org.millarts'
 mainClassName = 'millarts.mvncl.MvnCli'
 
@@ -29,6 +29,10 @@ ext {
   spockVersion       = '0.7-groovy-2.0'
 }
 
+configurations {
+  asciidoclet
+}
+
 repositories {
   mavenCentral()
   mavenLocal()
@@ -44,7 +48,8 @@ dependencies {
   compile "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
   compile "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}"
 
-  // testing
+  asciidoclet "org.asciidoctor:asciidoclet:${asciidocletVersion}"
+
   testCompile "co.freeside:betamax:${betamaxVersion}"
   testCompile "org.spockframework:spock-core:${spockVersion}"
 }
@@ -91,6 +96,11 @@ task sourceJar(type: Jar) {
 task javadocJar(type: Jar, dependsOn: groovydoc) {
   classifier = 'javadoc'
   from groovydoc
+}
+
+javadoc {
+  options.docletpath = configurations.asciidoclet.files.asType(List)
+  options.doclet = 'org.asciidoctor.Asciidoclet'
 }
 
 signing {
