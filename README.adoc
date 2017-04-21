@@ -6,6 +6,8 @@ David W Millar <david.w.millar@gmail.com>
 
 image:https://travis-ci.org/david-w-millar/mvncl.svg["Build Status", link="https://travis-ci.org/david-w-millar/mvncl"]
 
+*NOTE:* Work on this is discontinued. More useful tools are in the works, albeit slowly. Let me know if you wnat me to re-prioritize.
+
 Command line utility to search maven central. I got sick of using a browser.
 
 .Supported Searches
@@ -108,7 +110,7 @@ For more information about any of the sub-commands, use './mvncl help search <co
   This project is licensed under the terms of the
   http://www.apache.org/licenses/LICENSE-2.0.html[Apache License, Version 2.0].
 
-&copy; 2014 David W Millar
+&copy; 2014-2017 David W Millar
 
 // vim: set syntax=asciidoc:
 
