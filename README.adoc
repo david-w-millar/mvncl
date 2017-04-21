@@ -105,10 +105,11 @@ COMMANDS
 [NOTE]
 For more information about any of the sub-commands, use './mvncl help search <command>'
 
-### License
+## License
 
-  This project is licensed under the terms of the
-  http://www.apache.org/licenses/LICENSE-2.0.html[Apache License, Version 2.0].
+  This project is licensed under the terms of the Apache License, Version 2.0 ( http://www.apache.org/licenses/LICENSE-2.0.html ).
+  The license is only here to be legit, and explicitly permissive.
+  Use it how you want, I'm not the litigious type.
 
 &copy; 2014-2017 David W Millar
 
