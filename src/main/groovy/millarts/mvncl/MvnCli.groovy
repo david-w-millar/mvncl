@@ -8,6 +8,7 @@ import io.airlift.command.*
 /** Cli for working with maven central */
 @SuppressWarnings('Println')
 abstract class MvnCli implements Runnable {
+
   @Option(
     type = OptionType.GLOBAL,
     name = ['-f', '--format'],

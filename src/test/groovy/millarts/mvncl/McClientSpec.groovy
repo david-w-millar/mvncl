@@ -21,6 +21,7 @@ class McClientSpec extends Specification {
 
   void setupSpec() {
     BetamaxRoutePlanner.configure(client.client)
+    // TODO: This fixes older versions of betamax to work with modern-ish java. I'm pretty sure that recent versions of betamax fix this - check it out.
     TapePropertyUtils.metaClass.sort = { Set<Property> properties, List<String> names ->
       new LinkedHashSet(properties.sort( true, new OrderedPropertyComparator(names)))
     }
@@ -31,7 +32,6 @@ class McClientSpec extends Specification {
     when: SearchResults r = search('guice')
     then: r
   }
-
 
   @Betamax(tape='mvncl')
   @Unroll
@@ -50,7 +50,6 @@ class McClientSpec extends Specification {
       [ g: 'com.google.inject', v: '3.0' ]
     ]
   }
-
 
   void 'I can download artifacts given a path' () {
     when: Response r = download('com/jolira/guice/3.0.0/guice-3.0.0.pom', true)

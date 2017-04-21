@@ -16,9 +16,9 @@ import millarts.mvncl.domain.*
 class McClient {
 
   // Solr
-  private static final String SOLR_SELECT = 'solrsearch/select'
-  private static final String WT = 'json'
-  private static final Integer DEFAULT_ROWS = 20
+  private static final String SOLR_SELECT   = 'solrsearch/select'
+  private static final String WT            = 'json'
+  private static final Integer DEFAULT_ROWS = 50
 
   // Client
   static final RESTClient client = new RESTClient('http://search.maven.org/', JSON)
